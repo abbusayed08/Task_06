@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Modern, professional contact form with client-side validation">
+    <meta name="author" content="Your Name">
+    <title>Contact Form | Get In Touch</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Background gradient container -->
+    <div class="background-gradient"></div>
+
+    <!-- Header Navigation -->
+    <header class="app-header">
+        <div class="header-content">
+            <h1 class="app-title">Contact Form</h1>
+            <button id="viewResponsesBtn" class="responses-btn" aria-label="View submitted responses">
+                <span class="responses-icon">📋</span>
+                <span class="responses-badge" id="responsesBadge">0</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Responses Modal -->
+    <div id="responsesModal" class="modal">
+        <div class="modal-content responses-panel">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h2>Submitted Responses</h2>
+                <button id="closeResponsesBtn" class="close-btn" aria-label="Close responses panel">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <!-- Modal Body -->
+            <div class="modal-body">
+                <!-- Responses List -->
+                <div id="responsesList" class="responses-list">
+                    <p class="empty-message">No responses yet. Submit a message to see it here!</p>
+                </div>
+            </div>
+
+            <!-- Modal Footer -->
+            <div class="modal-footer">
+                <button id="clearResponsesBtn" class="clear-btn" aria-label="Clear all responses">
+                    Clear All Responses
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main container -->
+    <main class="container">
+        <!-- Contact form section -->
+        <div class="form-wrapper">
+            <!-- Header section -->
+            <div class="form-header">
+                <h1>Get In Touch</h1>
+                <p class="subtitle">We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
+            </div>
+
+            <!-- Contact form -->
+            <form id="contactForm" class="contact-form" novalidate>
+                <!-- Full Name field group -->
+                <div class="form-group">
+                    <label for="fullName" class="form-label">Full Name *</label>
+                    <input
+                        type="text"
+                        id="fullName"
+                        name="fullName"
+                        class="form-input"
+                        placeholder="Enter your full name"
+                        required
+                        aria-label="Full Name"
+                        aria-describedby="fullNameError"
+                    >
+                    <div id="fullNameError" class="error-message" role="alert"></div>
+                </div>
+
+                <!-- Email Address field group -->
+                <div class="form-group">
+                    <label for="email" class="form-label">Email Address *</label>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        class="form-input"
+                        placeholder="your.email@example.com"
+                        required
+                        aria-label="Email Address"
+                        aria-describedby="emailError"
+                    >
+                    <div id="emailError" class="error-message" role="alert"></div>
+                </div>
+
+                <!-- Message field group -->
+                <div class="form-group">
+                    <label for="message" class="form-label">Message *</label>
+                    <textarea
+                        id="message"
+                        name="message"
+                        class="form-textarea"
+                        placeholder="Write your message here... (minimum 10 characters)"
+                        required
+                        aria-label="Message"
+                        aria-describedby="messageError"
+                        rows="6"
+                    ></textarea>
+                    <div id="messageError" class="error-message" role="alert"></div>
+                </div>
+
+                <!-- Submit button -->
+                <button type="submit" class="submit-btn" id="submitBtn">
+                    <span class="btn-text">Send Message</span>
+                    <span class="btn-loader" aria-hidden="true"></span>
+                </button>
+            </form>
+
+            <!-- Success message section -->
+            <div id="successMessage" class="success-message" role="status" aria-live="polite" aria-atomic="true">
+                <div class="success-icon">✓</div>
+                <h2>Message Submitted Successfully!</h2>
+                <p>Thank you for getting in touch. We'll respond to your message as soon as possible.</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>
